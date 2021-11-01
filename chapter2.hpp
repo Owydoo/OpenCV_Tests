@@ -15,13 +15,14 @@
 using namespace std;
 using namespace cv;
 
-
 void printPhotoInGray(Mat img);
 
 void blurPhoto(Mat img);
 
 Mat getEdgeDetection(Mat img);
 void displayEdgeDetection(Mat img);
-void edgeDetectionDilated(Mat img);
+
+Mat getEdgeDetectionDilated(Mat img);
+void displayEdgeDetectionDilated(Mat img);
 
 #endif /* chapter2_hpp */

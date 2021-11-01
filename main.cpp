@@ -8,7 +8,8 @@
 int main() {
 
     Mat img = getTestImage();
-    edgeDetectionDilated(img);
+//    Mat img = getImageWitchPath("res/XPS.jpg");
+    displayEdgeDetectionDilated(img);
     return 0;
     
 }

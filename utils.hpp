@@ -17,6 +17,6 @@ using namespace std;
 using namespace cv;
 
 Mat getTestImage();
-
+Mat getImageWitchPath(string path);
 
 #endif /* utils_hpp */

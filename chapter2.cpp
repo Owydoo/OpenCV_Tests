@@ -48,21 +48,24 @@ void displayEdgeDetection(Mat img){
     waitKey(0);
 }
 
-void edgeDetectionDilated(Mat img){
-//    Mat img = getTestImage();
+Mat getEdgeDetectionDilated(Mat img){
     
     Mat imgCanny = getEdgeDetection(img);
     Mat imgDilated;
     
     Mat kernel = getStructuringElement(MORPH_RECT, Size(3,3));
     dilate(imgCanny, imgDilated, kernel);
+
+    return imgDilated;
     
+}
+
+void displayEdgeDetectionDilated(Mat img){
+    Mat imgDilated = getEdgeDetectionDilated(img);
     imshow("Image", img);
-    imshow("Img Canny", imgCanny);
     imshow("Img canny dilated", imgDilated);
     
-    waitKey();
-    
+    waitKey(0);
 }
 
 

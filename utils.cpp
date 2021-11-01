@@ -12,3 +12,8 @@ Mat getTestImage(){
     Mat img = imread(path);
     return img;
 }
+
+Mat getImageWitchPath(string path){
+    Mat img = imread(path);
+    return img;
+}
