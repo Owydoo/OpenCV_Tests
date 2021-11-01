@@ -5,38 +5,30 @@
 //  Created by Hugo Hersemeule on 31/10/2021.
 //
 #include "chapter1.hpp"
-
-#include <opencv2/imgcodecs.hpp>
-#include <opencv2/highgui.hpp>
-#include <opencv2/imgproc.hpp>
-#include <iostream>
-
-using namespace std;
-using namespace cv;
+#include "utils.hpp"
 
 /**
  Print a test photo from Resources folder
  */
-void printPhoto()
+void printPhoto(Mat img)
 {
     cout << "printPhoto" << endl;
-    string path = "Resources/test.png";
-  Mat img = imread(path);
-  imshow("Image", img);
-  waitKey(0);
+
+    imshow("Image", img);
+    waitKey(0);
 }
 
 void testWebcam(){
     VideoCapture cap(0);
-   Mat img;
- 
-   while (true) {
- 
-   cap.read(img);
-   imshow("Image", img);
-   waitKey(1);
- 
-   }
+    Mat img;
+    
+    while (true) {
+        
+        cap.read(img);
+        imshow("Image", img);
+        waitKey(1);
+        
+    }
 }
 
 void testVideo(){

@@ -6,24 +6,12 @@
 //
 
 #include "chapter2.hpp"
+#include "utils.hpp"
 
-
-#include <opencv2/imgcodecs.hpp>
-#include <opencv2/highgui.hpp>
-#include <opencv2/imgproc.hpp>
-#include <iostream>
-
-using namespace std;
-using namespace cv;
-
-void printPhotoInGray()
+void printPhotoInGray(Mat img)
 {
     cout << "printPhotoInGray" << endl;
-    string path = "Resources/test.png";
-    Mat img = imread(path);
-    
     Mat imgGray;
-   
     
     cvtColor(img, imgGray, COLOR_BGR2GRAY);
     
@@ -33,9 +21,7 @@ void printPhotoInGray()
     waitKey(0);
 }
 
-void blurPhoto(){
-    string path = "Resources/test.png";
-    Mat img = imread(path);
+void blurPhoto(Mat img){
     Mat imgBlur;
     GaussianBlur(img, imgBlur, Size(7,7), 5,0);
     imshow("Image", img);
@@ -43,16 +29,40 @@ void blurPhoto(){
     waitKey(0);
 }
 
-void edgeDetection(){
-    string path = "Resources/test.png";
-    Mat img = imread(path);
+Mat getEdgeDetection(Mat img){
+
     Mat imgBlur;
     Mat imgCanny;
     GaussianBlur(img, imgBlur, Size(3,3), 3,0);
     Canny(imgBlur, imgCanny, 50, 150);
     
-    imshow("Image blurred", imgBlur);
-    imshow("Image canny", imgCanny);
+    return imgCanny;
+}
+
+void displayEdgeDetection(Mat img){
+
+    Mat imgCanny = getEdgeDetection(img);
+    imshow("img", img);
+    imshow("img canny", imgCanny);
     
     waitKey(0);
 }
+
+void edgeDetectionDilated(Mat img){
+//    Mat img = getTestImage();
+    
+    Mat imgCanny = getEdgeDetection(img);
+    Mat imgDilated;
+    
+    Mat kernel = getStructuringElement(MORPH_RECT, Size(3,3));
+    dilate(imgCanny, imgDilated, kernel);
+    
+    imshow("Image", img);
+    imshow("Img Canny", imgCanny);
+    imshow("Img canny dilated", imgDilated);
+    
+    waitKey();
+    
+}
+
+

@@ -7,11 +7,21 @@
 
 #ifndef chapter2_hpp
 #define chapter2_hpp
+#include <opencv2/imgcodecs.hpp>
+#include <opencv2/highgui.hpp>
+#include <opencv2/imgproc.hpp>
+#include <iostream>
 
-void printPhotoInGray();
+using namespace std;
+using namespace cv;
 
-void blurPhoto();
 
-void edgeDetection();
+void printPhotoInGray(Mat img);
+
+void blurPhoto(Mat img);
+
+Mat getEdgeDetection(Mat img);
+void displayEdgeDetection(Mat img);
+void edgeDetectionDilated(Mat img);
 
 #endif /* chapter2_hpp */
