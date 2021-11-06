@@ -5,6 +5,7 @@
 //  Created by Hugo Hersemeule on 06/11/2021.
 //
 
+//resize and crop
 #include "chapter3.hpp"
 
 Mat getImageSmaller(Mat img){
