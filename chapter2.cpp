@@ -6,7 +6,6 @@
 //
 
 #include "chapter2.hpp"
-#include "utils.hpp"
 
 void printPhotoInGray(Mat img)
 {

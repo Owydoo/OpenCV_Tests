@@ -5,7 +5,7 @@
 //  Created by Hugo Hersemeule on 31/10/2021.
 //
 #include "chapter1.hpp"
-#include "utils.hpp"
+
 
 /**
  Print a test photo from Resources folder
