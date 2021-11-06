@@ -35,3 +35,13 @@ Mat scaleDownImage(Mat img, double coeff){
     
     return imgResized;
 }
+
+Mat cropImage(Mat img, int distanceFromLeft, int distanceFromTop, int width, int height){
+    Mat imgCropped;
+    
+    Rect roi(distanceFromLeft, distanceFromTop, width, height);
+    
+    imgCropped = img(roi);
+    
+    return imgCropped;
+}

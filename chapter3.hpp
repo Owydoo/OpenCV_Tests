@@ -15,5 +15,7 @@ Mat getImageSmaller(Mat image, int width, int height);
 void displayImgSize(Mat img);
 Mat scaleDownImage(Mat img, double coeff);
 
+Mat cropImage(Mat img, int distanceFromLeft, int distanceFromTop, int width, int height);
+
 
 #endif /* chapter3_hpp */

@@ -10,20 +10,13 @@ int main() {
 
 //    Mat img = getTestImage();
     Mat img = getImageWitchPath("res/XPS.jpg");
+
+    Mat imgCropped;
+    imgCropped = cropImage(img, 500, 500, 1000, 1000);
     
-    displayImgSize(img);
-    
-    Mat imgResized;
-    imgResized = getImageSmaller(img, 1280, 720);
-    
-    Mat imgScaled;
-    double coeff = 0.5;
-    imgScaled = scaleDownImage(img, coeff);
-    
-    imshow("image", img);
-    imshow("image resized", imgResized);
-    imshow("image scale down", imgScaled);
-    
+    imshow("Image", img);
+    imshow("Image cropped", imgCropped);
+
     waitKey(0);
     
     return 0;
